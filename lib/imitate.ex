@@ -1,0 +1,2 @@
+defmodule Imitate do
+end
