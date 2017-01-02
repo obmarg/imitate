@@ -26,7 +26,7 @@ defmodule Imitate do
       quote do
         def unquote(name)(unquote_splicing(args)) do
           Agent.get(__MODULE__, fn (parent) -> parent end)
-          |> send({Imitate.Call, unquote(name), {unquote_splicing(args)}})
+          |> send({__MODULE__, unquote(name), {unquote_splicing(args)}})
         end
       end
     end

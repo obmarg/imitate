@@ -27,13 +27,13 @@ defmodule ImitateTest do
     Imitate.start_link(FakeModule)
 
     FakeModule.funktion_one("test")
-    assert_receive {Imitate.Call, :funktion_one, {"test"}}
+    assert_receive {FakeModule, :funktion_one, {"test"}}
     refute_receive _
 
     FakeModule.funktion_one("test")
     FakeModule.funktion_two("test", "oh test")
-    assert_receive {Imitate.Call, :funktion_one, {"test"}}
-    assert_receive {Imitate.Call, :funktion_two, {"test", "oh test"}}
+    assert_receive {FakeModule, :funktion_one, {"test"}}
+    assert_receive {FakeModule, :funktion_two, {"test", "oh test"}}
     refute_receive _
   end
 end
