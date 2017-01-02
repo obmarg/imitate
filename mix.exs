@@ -7,7 +7,15 @@ defmodule Imitate.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps()]
+     deps: deps(),
+
+     # Docs Stuff
+     name: "Imitate",
+     source_url: "https://github.com/obmarg/imitate",
+     homepage_url: "https://github.com/obmarg/imitate",
+     docs: [main: "readme",
+            extras: ["README.md"]]
+    ]
   end
 
   # Configuration for the OTP application
@@ -27,6 +35,6 @@ defmodule Imitate.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [{:ex_doc, "~> 0.14", only: :dev}]
   end
 end
