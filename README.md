@@ -39,7 +39,7 @@ In your setup function you should start FakeHTTPoison module:
 
 ```
 setup do
-  {:ok, _} = Imitate.start_link(fakeHTTPoison)
+  {:ok, _} = Imitate.start_link(FakeHTTPoison)
 end
 ```
 
@@ -48,7 +48,7 @@ test process:
 
 ```
 FakeHTTPoison.get("http://www.example.com")
-assert_receive {Imitate.Call, :get, {"http://www.example.com"}}
+assert_receive {FakeHTTPPoison, :get, {"http://www.example.com"}}
 ```
 
 ### Limitations
