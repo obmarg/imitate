@@ -1,3 +1,7 @@
+DEPRECATED: At the moment, I think [mox](https://github.com/plataformatec/mox) 
+is a better solution to this problem.  `imitate` is deprecated in favour of 
+`mox`.
+
 # Imitate
 
 Imitate provides macros to easily create fake versions of actual modules. These
